@@ -26,10 +26,10 @@
             height: 100%;
             content: "";
             z-index: -1;
-            
+
         }
 
-       
+
         svg {
             fill: fuchsia;
         }
@@ -52,7 +52,7 @@
         }
 
         .welcome-box {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(29, 7, 44, 0.685);
             height: 80vh;
             /* position: relative; */
         }
@@ -63,7 +63,7 @@
             position: absolute;
             align-items: center;
             max-width: 50em;
-            top: 0;
+            top: 5%;
             bottom: 0;
             left: 0;
             right: 0;
@@ -71,10 +71,33 @@
 
         .welcome-heading {
             font-size: 4em;
-            background: linear-gradient(45deg, #6303B1, #ff0099);
+            /* background: linear-gradient(45deg, #6303B1, #ff0099); */
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 3vw rgb(255, 171, 230);
+            animation: glow 1.2s ease infinite;
+            -moz-animation: glow 1.2s ease infinite;
+            -webkit-animation: glow 1.2s ease infinite;
+            -webkit-text-stroke: 1px white;
+            filter: blur(1px);
         }
+
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 1vw rgb(252, 71, 198), 0 0 3vw rgb(252, 71, 198), 0 0 5vw rgb(252, 71, 198), 0 0 5vw rgb(252, 71, 198), 0 0 .4vw rgb(88, 186, 252), .1vw .1vw .1vw rgb(88, 186, 252);
+                color: rgb(88, 186, 252);
+                -webkit-text-stroke: 1px white;
+            }
+
+            50% {
+                text-shadow: 0 0 .5vw rgb(136, 13, 130), 0 0 1.5vw rgb(136, 13, 130), 0 0 3vw rgb(136, 13, 130), 0 0 3vw rgb(136, 13, 130), 0 0 .2vw rgb(136, 13, 130), .1vw .1vw .1vw rgb(136, 13, 130);
+                color: rgb(28, 24, 61);
+                -webkit-text-stroke: 1px rgb(235, 160, 228);
+            }
+        } 
 
         .bio-container {
             background-color: rgba(185, 178, 178, 0.8);
@@ -91,7 +114,7 @@
 <body>
 
 
-    <header>
+    <header class="fixed-top">
         <nav class="navbar navbar-light navbar-expand-lg justify-content-lg-center justify-content-start">
 
             <a class="navbar-brand mb-1 d-inline" href="#">Rita Aloshkina</a>
@@ -173,7 +196,7 @@
     </header>
 
     <div class="page-top container-fluid px-0">
-       
+
         <div class="row no-gutters">
             <div class="welcome-box col-sm-12 background_image">
                 <div class="content mx-auto text-center">
