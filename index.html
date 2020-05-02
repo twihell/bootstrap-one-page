@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             height: 100vh;
+            position: relative;
+
         }
 
         .background_image {
@@ -26,6 +32,9 @@
             height: 100%;
             content: "";
             z-index: -1;
+            margin: 0;
+            background-attachment: fixed;
+
 
         }
 
@@ -71,8 +80,9 @@
 
         .welcome-heading {
             font-size: 4em;
+            font-weight: bolder;
             /* background: linear-gradient(45deg, #6303B1, #ff0099); */
-            background-clip: text;
+            /* background-clip: text; */
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 3vw rgb(255, 171, 230);
             animation: glow 1.2s ease infinite;
@@ -97,7 +107,24 @@
                 color: rgb(28, 24, 61);
                 -webkit-text-stroke: 1px rgb(235, 160, 228);
             }
-        } 
+        }
+
+        @media screen and (max-width: 320px) {
+            .welcome-heading {
+                font-weight: normal;
+            }
+
+            .content {
+                top: 15%;
+            }
+
+        }
+
+        @media screen and (max-width: 800px) {
+            .background_image::before {
+                background-position: top;
+            }
+        }
 
         .bio-container {
             background-color: rgba(185, 178, 178, 0.8);
@@ -130,14 +157,14 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bio</a>
+                        <a class="nav-link" href="#bio">Bio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             My Hobbies
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Music</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Movies/Series/Anime</a>
@@ -200,27 +227,33 @@
         <div class="row no-gutters">
             <div class="welcome-box col-sm-12 background_image">
                 <div class="content mx-auto text-center">
-                    <h1 class="welcome-heading font-weight-bolder">WELCOME TO MY PERSONAL PAGE</h1>
+                    <h1 class="welcome-heading">WELCOME TO MY PERSONAL PAGE</h1>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- <div class="row no-gutters">
-            <div class="col-sm-12">
-                <div class="bio-container">
-                    <div class="bio-content mx-auto">
-                        <h2 class="text-center">Bio</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
+    <main class="container-fluid px-0">
+
+        <div class="row no-gutters">
+            <div class="bio-container col-sm-12" id="bio">
+
+                <div class="bio-content mx-auto">
+                    <h2 class="text-center">Bio</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
                 </div>
+
             </div>
+        </div>
 
-        </div> -->
-
+    </main>
 
 
 
@@ -237,6 +270,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+
 </body>
 
 </html>
