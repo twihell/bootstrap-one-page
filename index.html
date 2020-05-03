@@ -32,7 +32,6 @@
             height: 100%;
             content: "";
             z-index: -1;
-            margin: 0;
             background-attachment: fixed;
 
 
@@ -109,6 +108,33 @@
             }
         }
 
+
+
+
+        .bio-container {
+            background-color: rgba(185, 178, 178, 0.8);
+            position: relative;
+        }
+
+        .bio-content {
+            max-width: 50em;
+            height: 100%;
+            padding-top: 30px;
+            padding-bottom: 25px;
+
+
+        }
+
+        @media screen and (max-width: 800px) {
+            .background_image::before {
+                background-position: top;
+            }
+
+            .bio-content {
+                max-width: 90%;
+            }
+        }
+
         @media screen and (max-width: 320px) {
             .welcome-heading {
                 font-weight: normal;
@@ -118,22 +144,6 @@
                 top: 15%;
             }
 
-        }
-
-        @media screen and (max-width: 800px) {
-            .background_image::before {
-                background-position: top;
-            }
-        }
-
-        .bio-container {
-            background-color: rgba(185, 178, 178, 0.8);
-        }
-
-        .bio-content {
-            max-width: 50em;
-            height: 400px;
-            transform: translateY(30%);
         }
     </style>
 </head>
@@ -240,14 +250,32 @@
             <div class="bio-container col-sm-12" id="bio">
 
                 <div class="bio-content mx-auto">
-                    <h2 class="text-center">Bio</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <h2 class="py-1 text-center">Bio</h2>
+                    <p class="py-2 text-justify">
+                        Hi, my name is Rita. I'm 28 and I live in Lviv, Ukraine. I love cats, as well as other
+                        animals. I also love traveling and discovering new places. I have a degree in English
+                        linguistics,
+                        although I was never really happy working as a linguist, teacher, translator, or content
+                        manager.
+                        Having been left with only a fairly good knowledge of English, I realized I should become
+                        something
+                        else. So I got interested in <b>frontend development</b>.</p>
+                    <p class="py-1 text-justify">
+                        Despite being over-competitive, this sphere
+                        offers much more than just a steady career growth and financial stability. It's a challenging
+                        yet very
+                        creative industry that puts a great emphasis on constant self-development and logic-based
+                        mindset. I believe
+                        that it is due to my professional background that I chose this path, so I guess it was
+                        inevitable after all. I'm looking for a job now, although I keep feeling that my programming
+                        skills are still far from being acceptable for the position. But I continue my studies and do
+                        better and better every day.
                     </p>
+
+                    <p class="py-1 text-justify">
+                        Below, you can learn more about my hobbies and interests that eventually made me the person I am now.
+                    </p>
+
                 </div>
 
             </div>
