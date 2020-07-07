@@ -171,12 +171,20 @@
 
         }
 
-        .album {
-            padding-bottom: 10px;
+        .item {
+            padding-bottom: 20px;
+            margin: auto;
         }
 
-        .album>img:hover {
+        .item>img:hover {
             cursor: pointer;
+        }
+
+        .img-thumbnail {
+            max-height: 268.367px;
+            max-width: 70%;
+            height: auto;
+            background-size: cover;
         }
 
         .close {
@@ -206,16 +214,15 @@
 
         }
 
-        .carousel-item.active {
+        .big-view.active {
             display: flex;
             justify-content: center;
         }
 
-        .carousel-item img {
+        .big-view img {
             max-width: 70%;
             height: auto;
             background-size: cover;
-
         }
 
         .carousel-caption {
@@ -241,9 +248,6 @@
             right: -40px;
         }
 
-        .album {
-            margin: auto;
-        }
 
         @media screen and (max-width: 800px) {
             .background_image::before {
@@ -304,13 +308,13 @@
                             My Hobbies
                         </a>
                         <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Music</a>
+                            <a class="dropdown-item" href="#my-hobbies">Music</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Movies/Series/Anime</a>
+                            <a class="dropdown-item" href="#my-hobbies">Movies/Series/Anime</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Photography</a>
+                            <a class="dropdown-item" href="#my-hobbies">Photography</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Books</a>
+                            <a class="dropdown-item" href="#my-hobbies">Books</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -361,7 +365,7 @@
 
     </header>
 
-    <div class="page-top container-fluid px-0">
+    <div class="page-top container-fluid px-0" href="#">
 
         <div class="row no-gutters">
             <div class="welcome-box col-sm-12 background_image">
@@ -413,26 +417,26 @@
         </div>
 
         <div class="row no-gutters">
-            <div class="hobbies-container col-sm-12">
+            <div class="hobbies-container col-sm-12" id="my-hobbies">
                 <div class="hobbies-content mx-auto">
                     <div class="hobbies-title text-center">
                         <h2 class="py-1">My Hobbies</h2>
                         <p class="py-2">Here are some things that I love and do in my free time</p>
                     </div>
                     <div class="hobbies-section card text-center">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs justify-content-center">
+                        <div class="card-header" id="hobby-header">
+                            <ul class="nav nav-tabs card-header-tabs justify-content-center hobby-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Music</a>
+                                    <a class="nav-link active hobby-item" href="#">Music</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Movies/Series/Anime</a>
+                                    <a class="nav-link hobby-item" href="#">Movies/Series/Anime</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Photography</a>
+                                    <a class="nav-link hobby-item" href="#">Photography</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Books</a>
+                                    <a class="nav-link hobby-item" href="#">Books</a>
                                 </li>
                             </ul>
                         </div>
@@ -442,12 +446,12 @@
 
 
                             <div id="carousel-in-card" class="carousel slide" data-interval="false" data-wrap="false">
-                                <div class="carousel-inner">
+                                <div class="carousel-inner hobby">
 
-                                    <div class="carousel-item active">
+                                    <div class="carousel-item active slide">
                                         <div class="row">
-                                            <div class="album col col-md-5">
-                                                <img class="img-thumbnail" src="./images/music/1024330843.jpg"
+                                            <div class="item col col-md-5">
+                                                <img class="img-thumbnail" src="./images/music/21-pilots.jpg"
                                                     alt="21-pilots-trench">
                                                 <p class="card-text">
                                                     <b>21 Pilots</b>
@@ -456,20 +460,20 @@
                                                 </p>
                                             </div>
 
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
-                                                    src="./images/music/1 -tlnuQHA8bdf2ZLBCwvaDQ.jpeg"
-                                                    alt="daughter-album"">
-                                                <p class=" card-text">
-                                                <b>Daughter</b>
-                                                <br>
-                                                <i>Music from Before the Storm</i>
+                                                    src="./images/music/daughter.jpeg"
+                                                    alt="daughter-album">
+                                                <p class="card-text">
+                                                    <b>Daughter</b>
+                                                    <br>
+                                                    <i>Music from Before the Storm</i>
                                                 </p>
 
                                             </div>
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
-                                                    src="./images/music/1b0250bf-ac90-11e9-8101-00163e233d69.jpg"
+                                                    src="./images/music/thom-yorke.jpg"
                                                     alt="thom-yorke-anima">
                                                 <p class="card-text">
                                                     <b>Thom Yorke</b>
@@ -478,9 +482,9 @@
                                                 </p>
 
                                             </div>
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
-                                                    src="./images/music/19b90e2c0868ae6c92e3ee2dccd591fa.1000x1000x1.jpg"
+                                                    src="./images/music/lamb.jpg"
                                                     alt="lamb-fear-of-fours">
                                                 <p class="card-text">
                                                     <b>Lamb</b>
@@ -492,11 +496,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="carousel-item">
+                                    <div class="carousel-item slide">
                                         <div class="row">
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
-                                                    src="./images/music/phantogram-ceremony-2020-27184.jpg"
+                                                    src="./images/music/phantogram.jpg"
                                                     alt="phantogram-ceremony">
                                                 <p class="card-text">
                                                     <b>Phantogram</b>
@@ -505,8 +509,8 @@
                                                 </p>
 
                                             </div>
-                                            <div class="album col col-md-5">
-                                                <img class="img-thumbnail" src="./images/music/1014891788.jpg"
+                                            <div class="item col col-md-5">
+                                                <img class="img-thumbnail" src="./images/music/linkin-park.jpg"
                                                     alt="lp-reanimation">
                                                 <p class="card-text">
                                                     <b>Linkin Park</b>
@@ -515,9 +519,9 @@
                                                 </p>
 
                                             </div>
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
-                                                    src="./images/music/daniel pemberton - king arthur.jpg"
+                                                    src="./images/music/king-arthur.jpg"
                                                     alt="king-arthur-score">
                                                 <p class="card-text">
                                                     <b>Daniel Pemberton</b>
@@ -526,9 +530,9 @@
                                                 </p>
 
                                             </div>
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
-                                                    src="./images/music/gesaffelstein - aleph.jpg"
+                                                    src="./images/music/gesaffelstein.jpg"
                                                     alt="gesaffelstein-aleph">
                                                 <p class="card-text">
                                                     <b>Gesaffelstein</b>
@@ -540,10 +544,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="carousel-item">
+                                    <div class="carousel-item slide">
                                         <div class="row">
-                                            <div class="album col col-md-5">
-                                                <img class="img-thumbnail" src="./images/music/helios - Eingya.jpg"
+                                            <div class="item col col-md-5">
+                                                <img class="img-thumbnail" src="./images/music/helios.jpg"
                                                     alt="helios-eingya">
                                                 <p class="card-text">
                                                     <b>Helios</b>
@@ -552,7 +556,7 @@
                                                 </p>
 
                                             </div>
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail" src="./images/music/lorn-rarities.jpg"
                                                     alt="lorn-rarities">
                                                 <p class="card-text">
@@ -562,7 +566,7 @@
                                                 </p>
 
                                             </div>
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
                                                     src="./images/music/mike shinoda - post traumatic.jpg"
                                                     alt="mike-shinoda-posttraumatic">
@@ -574,9 +578,9 @@
 
                                             </div>
 
-                                            <div class="album col col-md-5">
+                                            <div class="item col col-md-5">
                                                 <img class="img-thumbnail"
-                                                    src="./images/music/tame-impala-currents-album-cover-1240x1240.jpg"
+                                                    src="./images/music/tame-impala.jpg"
                                                     alt="tame-impala-currents">
                                                 <p class="card-text">
                                                     <b>Tame Impala</b>
@@ -603,6 +607,7 @@
 
                                 </div>
 
+
                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
                                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
@@ -614,7 +619,7 @@
                                                 data-interval="false">
                                                 <div class="carousel-inner">
 
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100" src="./images/music/1024330843.jpg"
                                                             alt="21-pilots-trench">
@@ -630,7 +635,7 @@
                                                                 vibe even after thousands of re-listenings.</p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/1 -tlnuQHA8bdf2ZLBCwvaDQ.jpeg"
@@ -648,7 +653,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/1b0250bf-ac90-11e9-8101-00163e233d69.jpg"
@@ -667,7 +672,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/19b90e2c0868ae6c92e3ee2dccd591fa.1000x1000x1.jpg"
@@ -685,7 +690,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/phantogram-ceremony-2020-27184.jpg"
@@ -701,7 +706,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100" src="./images/music/1014891788.jpg"
                                                             alt="lp-reanimation">
@@ -724,7 +729,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/daniel pemberton - king arthur.jpg"
@@ -743,7 +748,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/gesaffelstein - aleph.jpg"
@@ -764,7 +769,7 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100" src="./images/music/helios - Eingya.jpg"
                                                             alt="helios-eingya">
@@ -784,7 +789,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100" src="./images/music/lorn-rarities.jpg"
                                                             alt="lorn-rarities">
@@ -803,7 +808,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/mike shinoda - post traumatic.jpg"
@@ -828,19 +833,25 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item big-view">
 
                                                         <img class="w-100"
                                                             src="./images/music/tame-impala-currents-album-cover-1240x1240.jpg"
                                                             alt="tame-impala-currents">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
-                                                                Tame Impala was a nut that was rather hard to crack. I tried to get through his
-                                                                psychedelic discography for quite some time, but I would drop it every time because I couldn't relate 
-                                                                to his music as much as I would expect. Nevertheless, I did recognize his talent and
-                                                                the artistic approach he implemented in his works. Finally, when I got to <i>Currents</i>,
-                                                                I realized it had reached a perfect balance between conventional psychedelic vibes and experimental
-                                                                electronic elements, and that's what I had been looking for in his works for such a long time.
+                                                                Tame Impala was a nut that was rather hard to crack. I
+                                                                tried to get through his
+                                                                psychedelic discography for quite some time, but I would
+                                                                drop it every time because I couldn't relate
+                                                                to his music as much as I would expect. Nevertheless, I
+                                                                did recognize his talent and
+                                                                the artistic approach he implemented in his works.
+                                                                Finally, when I got to <i>Currents</i>,
+                                                                I realized it had reached a perfect balance between
+                                                                conventional psychedelic vibes and experimental
+                                                                electronic elements, and that's what I had been looking
+                                                                for in his works for such a long time.
                                                             </p>
                                                         </div>
                                                     </div>
@@ -884,19 +895,20 @@
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 
+    <script src="index.js"></script>
+
     <script>
 
-
-        $('.album > img').click(function (event) {
+        $('.item > img').click(function (event) {
 
             let item = event.target;
             let carouselItems = $('#carousel-in-modal .carousel-item > img');
 
             for (let i = 0; i < carouselItems.length; i++) {
+
                 if (carouselItems.eq(i).attr("alt") === item.alt) {
 
                     carouselItems.eq(i).parent().addClass("active");
-                    console.log(carouselItems.eq(i));
 
                 } else if (carouselItems.eq(i).parent().hasClass("active")) {
                     carouselItems.eq(i).parent().removeClass("active");
@@ -948,6 +960,38 @@
         carouselControlHandler();
 
 
+        $('.hobby-nav').click(function (event) {
+            event.preventDefault();
+            let item = $(event.target);
+            let hobbyItem = $('.hobby-item');
+
+            for (let i = 0; i < hobbyItem.length; i++) {
+
+                if (!item.hasClass("active") && hobbyItem.eq(i).hasClass("active")) {
+                    item.addClass("active");
+                    hobbyItem.eq(i).removeClass("active");
+
+                    switch (item.prop("textContent")) {
+                        case "Movies/Series/Anime":
+                            insertMovies();
+                            break;
+                        case "Photography":
+                            insertPhotos();
+                            break;
+                        case "Books":
+                            insertBooks();
+                            break;
+                        case "Music":
+                            insertMusic();
+                            break;
+                        default:
+                            console.log("something went wrong");
+                    }
+
+                }
+            }
+
+        });
 
     </script>
 
