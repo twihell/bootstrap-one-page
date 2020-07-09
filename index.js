@@ -1,4 +1,5 @@
 const carouselItem = document.querySelectorAll(".slide>.row");
+const imageThumbnail = document.querySelectorAll(".slide>.row>.item>.img-thumbnail");
 
 const music = [
 
@@ -224,6 +225,69 @@ const photos = [
     }
 ];
 
+const compressedPhotos = [
+    {
+        "imageSource": "./images/compressed_photography/abandoned_tires.jpg",
+        "alt": "abandoned tires"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/afternoon.jpg",
+        "alt": "street picture"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/architectural_degradation.jpg",
+        "alt": "broken house"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/close_fitting_substances.jpg",
+        "alt": "river bank"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/double_expo_goat.jpg",
+        "alt": "goat eating bush leaves"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/gazing_at_the_sunset.jpg",
+        "alt": "a person watching sunset in a forest"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/green_tunnel.jpg",
+        "alt": "a railway covered in green"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/lonesome_tree.jpg",
+        "alt": "a tree shot on an inverted bluish film"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/plastic_trip.jpg",
+        "alt": "a few manikins tied to an old car top"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/post-box.jpg",
+        "alt": "a blue post_box in the middle of the street"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/sky_through_the_branches.jpg",
+        "alt": "tree branches covering the sunset sky"
+    },
+
+    {
+        "imageSource": "./images/compressed_photography/sunset_through_the_hall.jpg",
+        "alt": "a house hallway filled with sunlight"
+    }
+
+];
+
 const books = [
     {
         "imageSource": "./images/books/anna-karenina.jpg",
@@ -312,6 +376,8 @@ const books = [
 
 ];
 
+
+
 function clearCarousel() {
     for (let j = 0; j < carouselItem.length; j++) {
         carouselItem[j].innerHTML = "";
@@ -319,6 +385,8 @@ function clearCarousel() {
     }
 
 };
+
+
 
 function insertBooks() {
 
@@ -336,10 +404,7 @@ function insertBooks() {
             </p>
         </div>
      `;
-
             carouselItem[j].insertAdjacentHTML('beforeend', booksSection);
-
-
         }
     }
 };
@@ -356,13 +421,11 @@ function insertMusic() {
             <p class="card-text">
             <b>${music[4 * j + i].cardTextB}</b>
             <br>
+            <i>${music[4 * j + i].cardTextI}</i>
             </p>
         </div>
      `;
-
             carouselItem[j].insertAdjacentHTML('beforeend', musicSection);
-
-
         }
     }
 };
@@ -374,17 +437,14 @@ function insertPhotos() {
         for (let i = 0; i <= 3; i++) {
             const photosSection = `
         <div class="item col col-md-5">
-            <img class="img-thumbnail" src=${photos[4 * j + i].imageSource}
-            alt=${photos[4 * j + i].alt}>
+            <img class="img-thumbnail" src=${compressedPhotos[4 * j + i].imageSource}
+            alt=${compressedPhotos[4 * j + i].alt}>
             <p class="card-text">
             <br>
             </p>
         </div>
      `;
-
             carouselItem[j].insertAdjacentHTML('beforeend', photosSection);
-
-
         }
     }
 };
