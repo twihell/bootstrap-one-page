@@ -190,12 +190,13 @@
 
         .close {
             color: #F3A4F2;
-            position: absolute;
-            top: -15px;
-            right: -280px;
+            position: fixed;
+            top: 15px;
+            right: 80px;
             font-size: 35px;
             font-weight: bold;
             z-index: 9999;
+            margin: 0;
         }
 
         .close:hover {
@@ -205,25 +206,35 @@
 
         .modal {
             background-color: #200020;
+            padding-right: 0 !important;
+
         }
+
 
         .modal-content {
             background-color: transparent;
             justify-content: center;
             border: none;
+
+
+        }
+
+        .modal.fade .modal-dialog {
+            transition: none;
             position: relative;
 
         }
 
-        .big-view.active {
-            display: flex;
-            justify-content: center;
+        .big-view img {
+            width: auto;
+            height: 90vh !important;
+
         }
 
-        .big-view img {
-            max-width: 70%;
-            height: auto;
-            background-size: cover;
+        .big-view .active {
+            display: flex;
+            justify-content: center;
+
         }
 
         .carousel-caption {
@@ -231,21 +242,21 @@
             bottom: 0;
         }
 
-        .carousel-control-prev {
-
-            left: -200px;
+        #carousel-in-modal>.carousel-inner>.carousel-control-prev {
+            position: fixed; 
+            left: 150px;
         }
 
-        .carousel-control-next {
-
-            right: -200px;
+        #carousel-in-modal>.carousel-inner>.carousel-control-next {
+            position: fixed;
+            right: 150px;
         }
 
-        #carousel-in-card .carousel-inner .carousel-control-prev {
+        #carousel-in-card .hobby .carousel-control-prev {
             left: -40px;
         }
 
-        #carousel-in-card .carousel-inner .carousel-control-next {
+        #carousel-in-card .hobby .carousel-control-next {
             right: -40px;
         }
 
@@ -453,7 +464,7 @@
                                         <div class="row">
                                             <div class="item col col-md-5">
                                                 <img class="img-thumbnail" src="./images/music/21-pilots.jpg"
-                                                    alt="21-pilots-trench">
+                                                    alt="21 pilots - trench" data-name="music">
                                                 <p class="card-text">
                                                     <b>21 Pilots</b>
                                                     <br>
@@ -462,9 +473,8 @@
                                             </div>
 
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/daughter.jpeg"
-                                                    alt="daughter-album">
+                                                <img class="img-thumbnail" src="./images/music/daughter.jpeg"
+                                                    alt="daughter album" data-name="music">
                                                 <p class="card-text">
                                                     <b>Daughter</b>
                                                     <br>
@@ -473,9 +483,8 @@
 
                                             </div>
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/thom-yorke.jpg"
-                                                    alt="thom-yorke-anima">
+                                                <img class="img-thumbnail" src="./images/music/thom-yorke.jpg"
+                                                    alt="thom yorke - anima" data-name="music">
                                                 <p class="card-text">
                                                     <b>Thom Yorke</b>
                                                     <br>
@@ -484,9 +493,8 @@
 
                                             </div>
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/lamb.jpg"
-                                                    alt="lamb-fear-of-fours">
+                                                <img class="img-thumbnail" src="./images/music/lamb.jpg"
+                                                    alt="lamb - fear of fours" data-name="music">
                                                 <p class="card-text">
                                                     <b>Lamb</b>
                                                     <br>
@@ -500,9 +508,8 @@
                                     <div class="carousel-item slide">
                                         <div class="row">
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/phantogram.jpg"
-                                                    alt="phantogram-ceremony">
+                                                <img class="img-thumbnail" src="./images/music/phantogram.jpg"
+                                                    alt="phantogram - ceremony" data-name="music">
                                                 <p class="card-text">
                                                     <b>Phantogram</b>
                                                     <br>
@@ -512,7 +519,7 @@
                                             </div>
                                             <div class="item col col-md-5">
                                                 <img class="img-thumbnail" src="./images/music/linkin-park.jpg"
-                                                    alt="lp-reanimation">
+                                                    alt="lp-reanimation" data-name="music">
                                                 <p class="card-text">
                                                     <b>Linkin Park</b>
                                                     <br>
@@ -521,9 +528,8 @@
 
                                             </div>
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/king-arthur.jpg"
-                                                    alt="king-arthur-score">
+                                                <img class="img-thumbnail" src="./images/music/king-arthur.jpg"
+                                                    alt="King Arthur Score" data-name="music">
                                                 <p class="card-text">
                                                     <b>Daniel Pemberton</b>
                                                     <br>
@@ -532,9 +538,8 @@
 
                                             </div>
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/gesaffelstein.jpg"
-                                                    alt="gesaffelstein-aleph">
+                                                <img class="img-thumbnail" src="./images/music/gesaffelstein.jpg"
+                                                    alt="Gesaffelstein - Aleph" data-name="music">
                                                 <p class="card-text">
                                                     <b>Gesaffelstein</b>
                                                     <br>
@@ -549,7 +554,7 @@
                                         <div class="row">
                                             <div class="item col col-md-5">
                                                 <img class="img-thumbnail" src="./images/music/helios.jpg"
-                                                    alt="helios-eingya">
+                                                    alt="helios-eingya" data-name="music">
                                                 <p class="card-text">
                                                     <b>Helios</b>
                                                     <br>
@@ -559,7 +564,7 @@
                                             </div>
                                             <div class="item col col-md-5">
                                                 <img class="img-thumbnail" src="./images/music/lorn-rarities.jpg"
-                                                    alt="lorn-rarities">
+                                                    alt="lorn - rarities" data-name="music">
                                                 <p class="card-text">
                                                     <b>Lorn</b>
                                                     <br>
@@ -568,9 +573,8 @@
 
                                             </div>
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/mike-shinoda.jpg"
-                                                    alt="mike-shinoda-posttraumatic">
+                                                <img class="img-thumbnail" src="./images/music/mike-shinoda.jpg"
+                                                    alt="Mike Shinoda - Post Traumatic" data-name="music">
                                                 <p class="card-text">
                                                     <b>Mike Shinoda</b>
                                                     <br>
@@ -580,9 +584,8 @@
                                             </div>
 
                                             <div class="item col col-md-5">
-                                                <img class="img-thumbnail"
-                                                    src="./images/music/tame-impala.jpg"
-                                                    alt="tame-impala-currents">
+                                                <img class="img-thumbnail" src="./images/music/tame-impala.jpg"
+                                                    alt="tame impala - currents" data-name="music">
                                                 <p class="card-text">
                                                     <b>Tame Impala</b>
                                                     <br>
@@ -622,7 +625,7 @@
 
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100" src="./images/music/1024330843.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/21-pilots.jpg"
                                                             alt="21-pilots-trench">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">A friend of mine introduced me to 21 Pilots
@@ -634,12 +637,11 @@
                                                                 album left me in the most uplifting state you could ever
                                                                 imagine. Keep on feeling the same
                                                                 vibe even after thousands of re-listenings.</p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/1 -tlnuQHA8bdf2ZLBCwvaDQ.jpeg"
+                                                        <!-- <img class="w-100" src="./images/music/daughter.jpeg"
                                                             alt="daughter-album">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -652,12 +654,11 @@
                                                                 intense guitar-percussion explosions, give me a huge
                                                                 goosebump effect.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/1b0250bf-ac90-11e9-8101-00163e233d69.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/thom-yorke.jpg"
                                                             alt="thom-yorke-anima">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -671,12 +672,11 @@
                                                                 unique and otherwordly, and this album is a very nice
                                                                 example of his artistry.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/19b90e2c0868ae6c92e3ee2dccd591fa.1000x1000x1.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/lamb.jpg"
                                                             alt="lamb-fear-of-fours">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -689,12 +689,11 @@
                                                                 music that feels very attractive though
                                                                 mysterious and dangerous at times.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/phantogram-ceremony-2020-27184.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/phantogram.jpg"
                                                             alt="phantogram-ceremony">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -705,11 +704,11 @@
                                                                 starting a day, lifting one's spirits, cooking, working
                                                                 out, and basically living.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100" src="./images/music/1014891788.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/linkin-park.jpg"
                                                             alt="lp-reanimation">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -728,12 +727,11 @@
                                                                 their early works will always be an important part of my
                                                                 personality.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/daniel pemberton - king arthur.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/king-arthur.jpg"
                                                             alt="king-arthur-score">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -747,12 +745,11 @@
                                                                 choices and vibrant
                                                                 instrumentals.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/gesaffelstein - aleph.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/gesaffelstein.jpg"
                                                             alt="gesaffelstein-aleph">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -767,12 +764,12 @@
                                                                 to dance to it, but the feeling inside you is more of a
                                                                 discomfort, or even unexplicable pain.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
 
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100" src="./images/music/helios - Eingya.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/helios.jpg"
                                                             alt="helios-eingya">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -788,11 +785,11 @@
                                                                 music, which gives hope for the better,
                                                                 no matter what.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100" src="./images/music/lorn-rarities.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/lorn-rarities.jpg"
                                                             alt="lorn-rarities">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -807,12 +804,11 @@
                                                                 and it's always interesting to rediscover it from time
                                                                 to time.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/mike shinoda - post traumatic.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/mike-shinoda.jpg"
                                                             alt="mike-shinoda-posttraumatic">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -832,12 +828,11 @@
                                                                 it's one of the most intimate
                                                                 tributes I've ever experienced in my life.
                                                             </p>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="carousel-item big-view">
 
-                                                        <img class="w-100"
-                                                            src="./images/music/tame-impala-currents-album-cover-1240x1240.jpg"
+                                                        <!-- <img class="w-100" src="./images/music/tame-impala.jpg"
                                                             alt="tame-impala-currents">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="mb-0">
@@ -855,29 +850,31 @@
                                                                 for in his works for such a long time.
                                                             </p>
                                                         </div>
+                                                    </div> -->
                                                     </div>
-                                                </div>
-                                                <span class="close cursor">&times;</span>
-                                                <a class="carousel-control-prev" href="#carousel-in-modal" role="button"
-                                                    data-slide="prev">
-                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                                <a class="carousel-control-next" href="#carousel-in-modal" role="button"
-                                                    data-slide="next">
-                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
+                                                    <span class="close cursor">&times;</span>
+                                                    <a class="carousel-control-prev" href="#carousel-in-modal"
+                                                        role="button" data-slide="prev">
+                                                        <span class="carousel-control-prev-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carousel-in-modal"
+                                                        role="button" data-slide="next">
+                                                        <span class="carousel-control-next-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
     </main>
 
 
@@ -900,35 +897,67 @@
 
     <script>
 
-        $('.item > img').click(function (event) {
-
+        $('.slide>.row').on("click", ".item>.img-thumbnail", function (event) {
+            let carouselInModalPages = $('#carousel-in-modal>.carousel-inner>.big-view');
             let item = event.target;
-            let carouselItems = $('#carousel-in-modal .carousel-item > img');
 
-            for (let i = 0; i < carouselItems.length; i++) {
+            switch (item.dataset.name) {
+                case "movies-series-anime":
+                    insertModalMovies(carouselInModalPages);
+                    break;
+                case "photography":
+                    insertModalPhotos(carouselInModalPages);
+                    break;
+                case "books":
+                    insertModalBooks(carouselInModalPages);
+                    break;
+                case "music":
+                    insertModalMusic(carouselInModalPages);
+                    break;
+                default:
+                    console.log("something went wrong");
+            }
 
-                if (carouselItems.eq(i).attr("alt") === item.alt) {
 
-                    carouselItems.eq(i).parent().addClass("active");
 
-                } else if (carouselItems.eq(i).parent().hasClass("active")) {
-                    carouselItems.eq(i).parent().removeClass("active");
+            let carouselImages = $('#carousel-in-modal>.carousel-inner>.big-view>img');
+
+            for (let i = 0; i < carouselInModalPages.length; i++) {
+
+                if (carouselImages.eq(i).attr("alt") === item.alt) {
+                    carouselInModalPages.eq(i).addClass("active");
+
+
+                } else if (carouselInModalPages.eq(i).hasClass("active")) {
+                    carouselInModalPages.eq(i).removeClass("active");
+
                 }
+
             }
 
             $(".modal").modal('show');
 
-        });
 
+        });
 
         $('.close').click(function () {
+            let carouselInModalPages = $('#carousel-in-modal>.carousel-inner>.big-view');
             $('.modal').modal('hide');
-            if (('#carousel-in-card>.carousel-inner>.carousel-item').eq(0).hasClass('active')) {
+            carouselInModalPages.empty();
 
-                $('#carousel-in-card>.carousel-inner>.carousel-control-prev').addClass('d-none');
-
-            }
         });
+
+        $('.modal').click(function (event) {
+            let carouselInModalPages = $('#carousel-in-modal>.carousel-inner>.big-view');
+
+            if (event.target.tagName === "IMG" || event.target.tagName === "A" || event.target.tagName === "SPAN") {
+                event.preventDefault();
+            } else {
+                $('.modal').modal('hide');
+                carouselInModalPages.empty();
+            }
+
+        })
 
         function carouselControlHandler() {
             const carouselLength = $('#carousel-in-card>.carousel-inner>.carousel-item').length - 1;
@@ -993,6 +1022,8 @@
             }
 
         });
+
+
 
     </script>
 

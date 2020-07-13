@@ -1,4 +1,5 @@
 const carouselItem = document.querySelectorAll(".slide>.row");
+const carouselInModalItem = document.querySelectorAll("#carousel-in-modal>.carousel-inner>.big-view");
 const imageThumbnail = document.querySelectorAll(".slide>.row>.item>.img-thumbnail");
 
 const music = [
@@ -18,7 +19,7 @@ const music = [
     },
 
     {
-        "imageSource": "./images/music/gesaffelstein.jpg",
+        "imageSource": "./images/music/thom-yorke.jpg",
         "alt": "thom yorke - anima",
         "cardTextB": "Thom Yorke",
         "cardTextI": "Anima"
@@ -376,6 +377,30 @@ const books = [
 
 ];
 
+const moviesCaption = [
+    {
+        "caption": ""
+    }
+];
+
+const photosCaption = [
+    {
+        "caption": ""
+    }
+];
+
+const booksCaption = [
+    {
+        "caption": ""
+    }
+];
+
+const musicCaption = [
+    {
+        "caption": ""
+    }
+
+];
 
 
 function clearCarousel() {
@@ -395,8 +420,8 @@ function insertBooks() {
         for (let i = 0; i <= 3; i++) {
             const booksSection = `
         <div class="item col col-md-5">
-            <img class="img-thumbnail" src=${books[4 * j + i].imageSource}
-            alt=${books[4 * j + i].alt}>
+            <img class="img-thumbnail" src="${books[4 * j + i].imageSource}"
+            alt="${books[4 * j + i].alt}" data-name="books">
             <p class="card-text">
             <b>${books[4 * j + i].cardTextB}</b>
             <br>
@@ -416,8 +441,8 @@ function insertMusic() {
         for (let i = 0; i <= 3; i++) {
             const musicSection = `
         <div class="item col col-md-5">
-            <img class="img-thumbnail" src=${music[4 * j + i].imageSource}
-            alt=${music[4 * j + i].alt}>
+            <img class="img-thumbnail" src="${music[4 * j + i].imageSource}"
+            alt="${music[4 * j + i].alt}" data-name="music">
             <p class="card-text">
             <b>${music[4 * j + i].cardTextB}</b>
             <br>
@@ -437,8 +462,8 @@ function insertPhotos() {
         for (let i = 0; i <= 3; i++) {
             const photosSection = `
         <div class="item col col-md-5">
-            <img class="img-thumbnail" src=${compressedPhotos[4 * j + i].imageSource}
-            alt=${compressedPhotos[4 * j + i].alt}>
+            <img class="img-thumbnail" src="${compressedPhotos[4 * j + i].imageSource}"
+            alt="${compressedPhotos[4 * j + i].alt}" data-name="photography">
             <p class="card-text">
             <br>
             </p>
@@ -456,8 +481,8 @@ function insertMovies() {
         for (let i = 0; i <= 3; i++) {
             const moviesSection = `
         <div class="item col col-md-5">
-            <img class="img-thumbnail" src=${movies[4 * j + i].imageSource}
-            alt=${movies[4 * j + i].alt}>
+            <img class="img-thumbnail" src="${movies[4 * j + i].imageSource}"
+            alt="${movies[4 * j + i].alt}" data-name="movies-series-anime">
             <p class="card-text">
             <b>${movies[4 * j + i].cardTextB}</b>
             <br>
@@ -471,3 +496,67 @@ function insertMovies() {
         }
     }
 };
+
+function insertModalMovies(div) {
+    for (let i = 0; i < movies.length; i++) {
+        const modalMoviesSection = `
+        <img class="w-100"
+        src="${movies[i].imageSource}"
+        alt="${movies[i].alt}">
+        <div class="carousel-caption d-none d-md-block">
+            <p class="mb-0">${moviesCaption.caption}</p>
+        </div>
+        `;
+
+        div[i].insertAdjacentHTML('beforeend', modalMoviesSection);
+       
+
+    }
+}
+
+function insertModalPhotos(div) {
+    for (let i = 0; i < photos.length; i++) {
+        const modalPhotosSection = `
+        <img
+        src="${photos[i].imageSource}"
+        alt="${photos[i].alt}">
+        `;
+
+        div[i].insertAdjacentHTML('beforeend', modalPhotosSection);
+
+    }
+}
+
+function insertModalBooks(div) {
+    for (let i = 0; i < books.length; i++) {
+        const modalBooksSection = `
+        <img
+        src="${books[i].imageSource}"
+        alt="${books[i].alt}">
+        <div class="carousel-caption d-none d-md-block">
+            <p class="mb-0">${booksCaption.caption}</p>
+        </div>
+        `;
+
+        div[i].insertAdjacentHTML('beforeend', modalBooksSection);
+
+    }
+}
+
+function insertModalMusic(div) {
+    for (let i = 0; i < music.length; i++) {
+        const modalMusicSection = `
+        <img
+        src="${music[i].imageSource}"
+        alt="${music[i].alt}">
+        <div class="carousel-caption d-none d-md-block">
+            <p class="mb-0">${musicCaption.caption}</p>
+        </div>
+        `;
+
+        div[i].insertAdjacentHTML('beforeend', modalMusicSection);
+
+       
+    }
+}
+
