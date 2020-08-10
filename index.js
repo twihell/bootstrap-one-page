@@ -844,7 +844,7 @@ function insertMovies() {
 function insertModalMovies(div) {
     for (let i = 0; i < movies.length; i++) {
         const modalMoviesSection = `
-        <img class="w-100"
+        <img
         src="${movies[i].imageSource}"
         alt="${movies[i].alt}">
         <div class="carousel-caption d-md-block">

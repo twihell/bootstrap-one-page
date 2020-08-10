@@ -3,12 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>My Bootstrap Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
-
         @font-face {
             font-family: "NEON ABSOLUTE SANS1";
             src: url('./fonts/NEON\ ABSOLUTE\ SANS1.ttf') format('truetype');
@@ -17,7 +16,7 @@
 
         html {
             scroll-behavior: smooth;
-            
+
         }
 
         body {
@@ -26,7 +25,9 @@
 
         }
 
-        p, a {
+        p,
+        a,
+        h2 {
             font-family: Georgia, 'Times New Roman', Times, sans-serif;
         }
 
@@ -44,7 +45,7 @@
             height: 100%;
             content: "";
             z-index: -1;
-            background-attachment: fixed;
+            /* background-attachment: fixed; */
 
 
         }
@@ -54,13 +55,15 @@
             fill: fuchsia;
         }
 
-        a {
+        .navbar a,
+        .nav-item a {
 
             color: fuchsia !important;
         }
 
         header {
             background-color: #200020;
+
         }
 
         .navbar-toggler {
@@ -73,8 +76,9 @@
 
         .welcome-box {
             background-color: rgba(29, 7, 44, 0.685);
-            height: 80vh;
-            /* position: relative; */
+            height: 100vh;
+            position: relative;
+
         }
 
 
@@ -238,6 +242,8 @@
             background-color: transparent;
             justify-content: center;
             border: none;
+            width: 100%;
+            flex-direction: unset;
 
 
         }
@@ -251,7 +257,7 @@
         .big-view img {
             width: auto;
             height: 80vh !important;
-
+            margin: auto;
         }
 
 
@@ -268,6 +274,7 @@
             right: 0;
             left: 0;
             opacity: 0;
+
         }
 
         #carousel-in-modal>.carousel-inner {
@@ -292,8 +299,72 @@
             right: -40px;
         }
 
+        .about-container {
+            background: #F3A4F2;
+            position: relative;
+        }
 
-        @media screen and (max-aspect-ratio: 9/16) {
+        .about-content {
+
+            max-width: 50em;
+            height: 100%;
+            padding-top: 30px;
+            padding-bottom: 25px;
+
+        }
+
+        .h4 {
+            color: #580058;
+        }
+
+        .h4:hover {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        #about .card-body {
+            height: auto;
+            border: none;
+        }
+
+
+
+        @media only screen and (max-width: 720px) and (orientation: landscape) {
+            #carousel-in-modal>.carousel-inner>.carousel-control-prev {
+                position: fixed;
+                left: 0;
+            }
+
+            #carousel-in-modal>.carousel-inner>.carousel-control-next {
+                position: fixed;
+                right: 0;
+            }
+
+            .welcome-heading {
+                animation: none;
+            }
+
+            .carousel-caption {
+                font-size: 8px;
+                height: 100%;
+                display: flex !important;
+                align-items: center;
+                margin: auto;
+
+
+            }
+
+
+            .item {
+                width: 230px;
+            }
+
+
+
+        }
+
+        @media screen and (max-width: 720px) and (orientation: portrait) {
             .background_image::before {
                 background-position: top;
             }
@@ -308,7 +379,7 @@
                 text-shadow: 0 0 4vw fuchsia;
                 max-width: 100vw;
                 font-size: 3em;
-                outline: 1px red;
+
 
             }
 
@@ -350,12 +421,12 @@
             }
 
             #carousel-in-modal>.carousel-inner>.carousel-control-prev {
-                top: 77%;
+                top: 83%;
                 left: 80px;
             }
 
             #carousel-in-modal>.carousel-inner>.carousel-control-next {
-                top: 77%;
+                top: 83%;
                 right: 80px;
             }
 
@@ -372,6 +443,10 @@
                 width: 95%;
                 height: auto;
                 margin: auto;
+                display: flex;
+                align-items: center;
+                top: 0;
+                bottom: 0;
             }
 
             .carousel-caption {
@@ -444,7 +519,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -798,6 +873,102 @@
                             </div>
 
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="about-container col-sm-12" id="about">
+                <div class="about-content mx-auto">
+                    <h2 class="py-1 text-center">About</h2>
+                    <h3>
+                        <a class="h4 dropdown-toggle" data-toggle="collapse" href="#whyIMadeThis" role="button" aria-expanded="true"
+                            aria-controls="whyIMadeThis">Why I made this</a>
+                    </h3>
+                    <div class="row">
+                        <div class="col">
+                            <div class="collapse show" id="whyIMadeThis">
+                                <div class="card card-body">
+                                    <p class=" py-2 text-justify">
+                                        This page was made mainly to practice HTML/CSS, more specifically –
+                                        <b>Bootstrap</b>. I
+                                        decided to take a better look at the library’s popular components, such as
+                                        navbar, carousel, and modal. Making a personal web page was the most suitable
+                                        solution for the task, but I didn’t want it to be a CV-like personal page, so it
+                                        eventually turned out to be a more casual alternative.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>
+                        <a class="h4 dropdown-toggle" data-toggle="collapse" href="#HowItWorks" role="button"
+                            aria-expanded="false" aria-controls="HowItWorks">How it works</a>
+                    </h3>
+                    <div class="row">
+                        <div class="col">
+                            <div class="collapse multi-collapse" id="HowItWorks">
+                                <div class="card card-body"">
+                                    <p class=" py-2 text-justify">
+                                    In the process, I came up with a few quite strange creative decisions, like putting
+                                    a carousel inside a card and making another carousel out of a standard Bootstrap
+                                    modal. As a result, I had to override some of the standard Bootstrap behaviors to
+                                    make everything work according to my plan.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>
+                        <a class="h4 dropdown-toggle" data-toggle="collapse" href="#UXNotes" role="button"
+                            aria-expanded="false" aria-controls="UXNotes">UX notes and recommendations</a>
+                    </h3>
+                    <div class="row">
+                        <div class="col">
+                            <div class="collapse multi-collapse" id="UXNotes">
+                                <div class="card card-body"">
+                                    <p class=" py-2 text-justify">
+
+                                    I tried to make the interface as intuitive as possible, but there are some
+                                    subtleties that may not be obvious to the user at first glance. My Hobbies section
+                                    has a few categories, and the user can switch between them to see respective content
+                                    of the each category. How else can you interact with this section?
+                                    <br>
+                                    <br>
+                                    1. You can click/tap on thumbnails to trigger opening of the modal that will show
+                                    you a big-sized version of the image.
+                                    <br>
+                                    <br>
+                                        <img src="./images/explanatory-gifs/first-point.gif" alt="" class="d-flex mx-auto">
+                                    
+                                    <br>
+                                    <br>
+
+                                    2. If you’re using a laptop or PC, you can hover over the large image to see its
+                                    caption. If the cursor is outside the image, the caption will not be visible. The
+                                    same effect can be achieved from the mobile device, but the user has to tap on the
+                                    image to see the caption and tap again to disable it.
+                                    <br>
+                                    <br>
+                                    <img src="./images/explanatory-gifs/second-point.gif" alt="" class="d-flex mx-auto">
+                                    
+                                    <br>
+                                    <br>
+                                    3. In <b>The Photos</b> category, only the first image has a caption, while the rest are
+                                    simply there to give you a better look at the pictures.
+                                    <br>
+                                    <br>
+                                    <img src="./images/explanatory-gifs/third-point.gif" alt="" class="d-flex mx-auto">
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 
@@ -953,13 +1124,13 @@
         });
 
         function mobileHandler() {
-            let isMobile = window.matchMedia("screen and (max-width: 800px)").matches;
+            let isMobile = window.matchMedia("screen and (max-width: 720px)").matches;
+            let isLandscape = window.matchMedia("all and (orientation: landscape)").matches;
 
             if (isMobile) {
                 $('#carousel-in-modal>.carousel-inner .big-view').click(function (event) {
                     let imageCaption = $('.carousel-caption');
                     let item = event.target;
-                    console.log(item.tagName);
 
 
                     if (event.target.tagName === "IMG" || event.target.tagName === "DIV" || event.target.tagName === "P") {
@@ -977,8 +1148,8 @@
                 $('#carousel-in-modal>.carousel-inner .big-view').mouseenter(function (event) {
                     let imageCaption = $('.carousel-caption');
                     let item = event.target;
-
-                    if (event.target.tagName === "IMG" || event.target.tagName === "P") {
+                    // console.log("mouse entered");
+                    if (event.target.tagName === "IMG" || event.target.tagName === "P" || event.target.tagName === "DIV") {
                         imageCaption.animate({ opacity: 1 }, 500);
                     }
 
@@ -991,7 +1162,7 @@
                     let imageCaption = $('.carousel-caption');
                     let item = event.target;
 
-                    if (event.target.tagName === "IMG" || event.target.tagName === "P") {
+                    if (event.target.tagName === "IMG" || event.target.tagName === "P" || event.target.tagName === "DIV") {
                         imageCaption.animate({ opacity: 0 }, 500);
                     }
                 })
