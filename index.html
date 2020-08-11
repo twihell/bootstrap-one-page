@@ -52,13 +52,13 @@
 
 
         svg {
-            fill: fuchsia;
+            fill: #EA79E9;
         }
 
         .navbar a,
         .nav-item a {
 
-            color: fuchsia !important;
+            color: #EA79E9 !important;
         }
 
         header {
@@ -141,8 +141,8 @@
         }
 
 
-
-        .bio-content h2~p {
+        .bio-content h2,
+        p {
             color: #200020;
         }
 
@@ -159,7 +159,11 @@
         }
 
         .hobbies-title {
-            color: fuchsia;
+            color: #EA79E9;
+        }
+
+        .hobbies-title p {
+            color: #EA79E9;
         }
 
         .card {
@@ -186,8 +190,6 @@
             color: #200020 !important;
             border: 1px solid #580058;
             border-bottom: unset;
-            /* box-shadow: inset 0 0 1vw #200020 */
-
         }
 
         #carousel-in-card>.carousel-inner {
@@ -300,12 +302,12 @@
         }
 
         .about-container {
-            background: #F3A4F2;
+            background: #F9CFF1;
             position: relative;
         }
 
         .about-content {
-
+            color: #F9CFF1;
             max-width: 50em;
             height: 100%;
             padding-top: 30px;
@@ -313,24 +315,73 @@
 
         }
 
+        .about-content h2 {
+            color: #200020;
+        }
+
         .h4 {
             color: #580058;
+            overflow: hidden;
+            white-space: normal;
         }
 
         .h4:hover {
-            color: white;
+            color: #FFFAF0;
             text-decoration: none;
-
         }
 
         #about .card-body {
             height: auto;
             border: none;
+            background: #F9CFF1;
+        }
+
+        #about .card-body img {
+            max-width: 90vw;
+        }
+
+        .contact-container {
+            background: #580058;
+            position: relative;
         }
 
 
+        .contact-content {
+            max-width: 50em;
+            height: 100%;
+            padding-top: 30px;
+            padding-bottom: 25px;
+        }
 
-        @media only screen and (max-width: 720px) and (orientation: landscape) {
+        #contact h2 {
+            color: #EA79E9;
+        }
+
+        .contact-content .icon {
+            position: relative;
+            display: table-cell;
+            padding: 0 0 5px 0;
+        }
+
+        .contact-content .text {
+            position: relative;
+            display: table-cell;
+            padding: 0 0 5px 15px;
+            width: 200px;
+            vertical-align: middle;
+
+        }
+
+        .contact-content address {
+            margin: 0 0 0 0 !important;
+            bottom: 0;
+            position: absolute;
+            color: #EA79E9;
+            font-size: 20px;
+        }
+
+
+        @media only screen and (max-width: 800px) and (orientation: landscape) {
             #carousel-in-modal>.carousel-inner>.carousel-control-prev {
                 position: fixed;
                 left: 0;
@@ -463,6 +514,24 @@
 
             }
 
+            .h4:focus {
+                color: #FFFAF0;
+                text-decoration: none;
+
+            }
+
+            .about-content {
+                margin-left: 5px;
+            }
+
+            .contact-content .row {
+                margin-left: 5px;
+            }
+
+            .hobbies-title {
+                margin: 5px;
+            }
+
 
 
         }
@@ -522,7 +591,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
 
@@ -882,56 +951,57 @@
                 <div class="about-content mx-auto">
                     <h2 class="py-1 text-center">About</h2>
                     <h3>
-                        <a class="h4 dropdown-toggle" data-toggle="collapse" href="#whyIMadeThis" role="button" aria-expanded="true"
-                            aria-controls="whyIMadeThis">Why I made this</a>
+                        <a class="h4 dropdown-toggle" data-toggle="collapse" href="#whyIMadeThis" role="button"
+                            aria-expanded="true" aria-controls="whyIMadeThis">Why I made this</a>
                     </h3>
-                    <div class="row">
-                        <div class="col">
-                            <div class="collapse show" id="whyIMadeThis">
-                                <div class="card card-body">
-                                    <p class=" py-2 text-justify">
-                                        This page was made mainly to practice HTML/CSS, more specifically –
-                                        <b>Bootstrap</b>. I
-                                        decided to take a better look at the library’s popular components, such as
-                                        navbar, carousel, and modal. Making a personal web page was the most suitable
-                                        solution for the task, but I didn’t want it to be a CV-like personal page, so it
-                                        eventually turned out to be a more casual alternative.
-                                    </p>
-                                </div>
+
+                    <div class="col">
+                        <div class="collapse show" id="whyIMadeThis">
+                            <div class="card card-body">
+                                <p class=" py-2 text-justify">
+                                    This page was made mainly to practice HTML/CSS, more specifically –
+                                    <b>Bootstrap</b>. I
+                                    decided to take a better look at the library’s popular components, such as
+                                    navbar, carousel, and modal. Making a personal web page was the most suitable
+                                    solution for the task, but I didn’t want it to be a CV-like personal page, so it
+                                    eventually turned out to be a more casual alternative.
+                                </p>
                             </div>
                         </div>
                     </div>
+
                     <h3>
                         <a class="h4 dropdown-toggle" data-toggle="collapse" href="#HowItWorks" role="button"
                             aria-expanded="false" aria-controls="HowItWorks">How it works</a>
                     </h3>
-                    <div class="row">
-                        <div class="col">
-                            <div class="collapse multi-collapse" id="HowItWorks">
-                                <div class="card card-body"">
-                                    <p class=" py-2 text-justify">
-                                    In the process, I came up with a few quite strange creative decisions, like putting
-                                    a carousel inside a card and making another carousel out of a standard Bootstrap
-                                    modal. As a result, I had to override some of the standard Bootstrap behaviors to
-                                    make everything work according to my plan.
 
-                                    </p>
-                                </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="HowItWorks">
+                            <div class="card card-body"">
+                                    <p class=" py-2 text-justify">
+                                In the process, I came up with a few quite strange creative decisions, like putting
+                                a carousel inside a card and making another carousel out of a standard Bootstrap
+                                modal. As a result, I had to override some of the standard Bootstrap behaviors to
+                                make everything work according to my plan.
+
+                                </p>
                             </div>
                         </div>
                     </div>
+
                     <h3>
                         <a class="h4 dropdown-toggle" data-toggle="collapse" href="#UXNotes" role="button"
                             aria-expanded="false" aria-controls="UXNotes">UX notes and recommendations</a>
                     </h3>
-                    <div class="row">
-                        <div class="col">
-                            <div class="collapse multi-collapse" id="UXNotes">
-                                <div class="card card-body"">
-                                    <p class=" py-2 text-justify">
+
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="UXNotes">
+                            <div class="card card-body">
+                                <p class="py-2 text-justify">
 
                                     I tried to make the interface as intuitive as possible, but there are some
-                                    subtleties that may not be obvious to the user at first glance. My Hobbies section
+                                    subtleties that may not be obvious to the user at first glance. <b>My Hobbies</b>
+                                    section
                                     has a few categories, and the user can switch between them to see respective content
                                     of the each category. How else can you interact with this section?
                                     <br>
@@ -940,8 +1010,8 @@
                                     you a big-sized version of the image.
                                     <br>
                                     <br>
-                                        <img src="./images/explanatory-gifs/first-point.gif" alt="" class="d-flex mx-auto">
-                                    
+                                    <img src="./images/explanatory-gifs/first-point.gif" alt="" class="d-flex mx-auto">
+
                                     <br>
                                     <br>
 
@@ -952,22 +1022,106 @@
                                     <br>
                                     <br>
                                     <img src="./images/explanatory-gifs/second-point.gif" alt="" class="d-flex mx-auto">
-                                    
+
                                     <br>
                                     <br>
-                                    3. In <b>The Photos</b> category, only the first image has a caption, while the rest are
+                                    3. In the <b>Photography</b> category, only the first image has a caption, while the
+                                    rest are
                                     simply there to give you a better look at the pictures.
                                     <br>
                                     <br>
                                     <img src="./images/explanatory-gifs/third-point.gif" alt="" class="d-flex mx-auto">
 
-                                    </p>
-                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="contact-container col-sm-12" id="contact">
+                <div class="contact-content mx-auto">
+                    <h2 class="py-1 text-center">Contact</h2>
+                    <div class="row no-gutters py-2">
+
+                        <div class="location-info col-xs-12 col-sm-6">
+
+                            <div class="icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32" height="50"
+                                    viewBox="99 250 408 331" enable-background="new 0 0 595.28 841.89"
+                                    xml:space="preserve">
+
+                                    <path d="M297.64,123.305c-109.411,0-198.427,89.016-198.427,198.427c0,32.845,8.212,65.411,23.823,94.296
+                                   L286.789,712.19c2.18,3.948,6.334,6.395,10.851,6.395c4.517,0,8.671-2.446,10.851-6.395l163.814-296.26
+                                   c15.551-28.787,23.762-61.355,23.762-94.2C496.067,212.321,407.051,123.305,297.64,123.305z M450.541,404.026L297.64,680.557
+                                   L144.8,404.135c-13.601-25.167-20.782-53.664-20.782-82.403c0-95.738,77.886-173.623,173.623-173.623
+                                   s173.623,77.886,173.623,173.623C471.263,350.471,464.081,378.968,450.541,404.026z" />
+                                    <path
+                                        d="M297.64,222.518c-54.705,0-99.213,44.508-99.213,99.213c0,54.706,44.508,99.214,99.213,99.214
+                                   s99.213-44.508,99.213-99.213S352.345,222.518,297.64,222.518z M297.64,396.142c-41.032,0-74.41-33.378-74.41-74.41
+                                   s33.378-74.41,74.41-74.41s74.41,33.378,74.41,74.41C372.05,362.763,338.672,396.142,297.64,396.142z" />
+
+                                </svg>
+                            </div>
+                            <address class="text">
+                                Lviv, Ukraine
+                            </address>
+
+                        </div>
+                    </div>
+                    <div class="row no-gutters py-2">
+                        <div class="email-info col-xs-12 col-sm-6">
+                            <div class="icon">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="30"
+                                    viewBox="0 -5 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                                    <path stroke="#EA79E9" stroke-width="2" d="M0,8.5v2.291v38.418V51.5h60v-2.291V10.791V8.5H0z M36.625,30.564l-5.446,5.472c-0.662,0.615-1.698,0.614-2.332,0.026
+	l-5.473-5.498l0.048-0.047L3.647,10.5h52.719L36.577,30.518L36.625,30.564z M20.524,30.533L2,48.355V11.923L20.524,30.533z
+	 M21.934,31.95l5.523,5.549c0.709,0.661,1.619,0.993,2.533,0.993c0.923,0,1.85-0.339,2.581-1.02l5.496-5.522L56.304,49.5H3.686
+    L21.934,31.95z M39.477,30.534L58,11.922v36.433L39.477,30.534z" />
+                            </div>
+                            <address class="text">
+                                sevlost@gmail.com
+                            </address>
+                        </div>
+                    </div>
+                    <div class="row no-gutters py-2">
+                        <div class="phone-info col-xs-12 col-sm-6 mt-n2">
+                            <div class="icon">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="60"
+                                    viewBox="55 -30 512 512" style="enable-background:new 0 0 512 512;"
+                                    xml:space="preserve">
+
+                                    <path stroke="#EA79E9" stroke-width="7" d="M366,0H146c-20.678,0-37.5,16.822-37.5,37.5v437c0,20.678,16.822,37.5,37.5,37.5h220c20.678,0,37.5-16.822,37.5-37.5v-437
+			C403.5,16.822,386.678,0,366,0z M388.5,407H176c-4.142,0-7.5,3.358-7.5,7.5c0,4.142,3.358,7.5,7.5,7.5h212.5v52.5
+			c0,12.407-10.093,22.5-22.5,22.5H146c-12.407,0-22.5-10.093-22.5-22.5V422H146c4.142,0,7.5-3.358,7.5-7.5
+			c0-4.142-3.358-7.5-7.5-7.5h-22.5V75h265V407z M388.5,60h-265V37.5c0-12.407,10.093-22.5,22.5-22.5h220
+			c12.407,0,22.5,10.093,22.5,22.5V60z" />
+
+                                    <path stroke="#EA79E9" stroke-width="7" d="M286,30h-30c-4.142,0-7.5,3.358-7.5,7.5c0,4.142,3.358,7.5,7.5,7.5h30c4.142,0,7.5-3.358,7.5-7.5
+			C293.5,33.358,290.142,30,286,30z" />
+
+                                    <path stroke="#EA79E9" stroke-width="7" d="M256,437c-12.407,0-22.5,10.093-22.5,22.5c0,12.407,10.093,22.5,22.5,22.5s22.5-10.093,22.5-22.5
+			C278.5,447.093,268.407,437,256,437z M256,467c-4.136,0-7.5-3.364-7.5-7.5s3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5
+			S260.136,467,256,467z" />
+                                    <circle stroke="#EA79E9" stroke-width="7" cx="226" cy="37.5" r="7.5" />
+
+                                </svg>
+                            </div>
+                            <address class="text pl-2">
+                                
+                                +38 (068) 494 19 18
+                            
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         </div>
     </main>
 
