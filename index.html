@@ -27,7 +27,7 @@
 
         p,
         a,
-        h2 {
+        h2, footer {
             font-family: Georgia, 'Times New Roman', Times, sans-serif;
         }
 
@@ -71,7 +71,7 @@
         }
 
         .dropdown-menu {
-            background-color: #200020 !important;
+            background-color: #200020;
         }
 
         .welcome-box {
@@ -136,13 +136,10 @@
             height: 100%;
             padding-top: 30px;
             padding-bottom: 25px;
-
-
         }
 
 
-        .bio-content h2,
-        p {
+        .bio-content h2 p {
             color: #200020;
         }
 
@@ -212,8 +209,6 @@
         }
 
         .img-thumbnail {
-            /* 268.367px; */
-            /* 141.783 */
             max-height: 146.45px;
         }
 
@@ -258,7 +253,7 @@
 
         .big-view img {
             width: auto;
-            height: 80vh !important;
+            height: 80vh;
             margin: auto;
         }
 
@@ -307,7 +302,6 @@
         }
 
         .about-content {
-            color: #F9CFF1;
             max-width: 50em;
             height: 100%;
             padding-top: 30px;
@@ -315,7 +309,7 @@
 
         }
 
-        .about-content h2 {
+        .about-content~h2 p {
             color: #200020;
         }
 
@@ -373,11 +367,18 @@
         }
 
         .contact-content address {
-            margin: 0 0 0 0 !important;
-            bottom: 0;
             position: absolute;
             color: #EA79E9;
             font-size: 20px;
+        }
+
+        footer {
+            background-color: #200020;
+            padding: .5rem 1rem;
+        }
+
+        .footer-copyright {
+            color: #EA79E9;
         }
 
 
@@ -1112,18 +1113,22 @@
                                 </svg>
                             </div>
                             <address class="text pl-2">
-                                
+
                                 +38 (068) 494 19 18
-                            
+
                             </address>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </div>
         </div>
     </main>
+
+    <footer class="container-fluid page-footer">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright: Rita Aloshkina
+        </div>
+
+    </footer>
 
 
 
@@ -1278,8 +1283,7 @@
         });
 
         function mobileHandler() {
-            let isMobile = window.matchMedia("screen and (max-width: 720px)").matches;
-            let isLandscape = window.matchMedia("all and (orientation: landscape)").matches;
+            let isMobile = window.matchMedia("screen and (max-width: 720px) and (orientation: portrait").matches;
 
             if (isMobile) {
                 $('#carousel-in-modal>.carousel-inner .big-view').click(function (event) {
