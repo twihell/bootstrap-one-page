@@ -905,3 +905,6 @@ function insertModalMusic(div) {
     }
 }
 
+/*  <!-- if (!item.parent().hasClass('dropdown')) {
+    $('#navbarSupportedContent').removeClass("show");
+} */
