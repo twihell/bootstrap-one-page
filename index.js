@@ -333,7 +333,7 @@ const books = [
     },
 
     {
-        "imageSource": "./images/books/Needful-things.jpg",
+        "imageSource": "./images/books/Needful-Things.jpg",
         "alt": "needful things",
         "cardTextB": "Stephen King",
         "cardTextI": "Needful Things"
