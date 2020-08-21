@@ -87,7 +87,6 @@
             height: 100%;
             content: "";
             z-index: -1;
-            /* background-attachment: fixed; */
 
 
         }
@@ -97,6 +96,11 @@
             fill: #FFFAF0;
 
         }
+
+        svg:hover {
+            filter: drop-shadow( 0 0 5px rgb(252, 71, 198)); 
+        }
+
 
         h1,
         h2,
@@ -1349,13 +1353,13 @@
 
                         if (!$('.navbar-toggler').hasClass("collapsed") && $('#navbarSupportedContent').hasClass("show")) {
                             $('.navbar-toggler').toggleClass("glow");
-                           
+
                         } else {
                             $('.navbar-toggler').addClass("glow");
                         }
-                        
+
                     });
-                 
+
                     $('.dropdown').on('show.bs.dropdown', function () {
                         $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
                     });
@@ -1367,10 +1371,10 @@
 
                     $('.nav-item').click(function () {
                         let item = $(event.target);
-                       
                         if (!item.parent().hasClass('dropdown')) {
                             $('#navbarSupportedContent').removeClass("show");
-                        } 
+
+                        }
                     })
 
                 } else {
@@ -1413,15 +1417,11 @@
 
             //Event handlers
 
-          
-            
-            $('.dropdown').hover(function() {
-                $( this ).find('.dropdown-menu' ).stop( true, true ).slideDown(300);
-              }, function() {
-                $( this ).find( '.dropdown-menu' ).stop().slideUp(300);
-              });
-
-
+            $('.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).slideDown(300);
+            }, function () {
+                $(this).find('.dropdown-menu').stop().slideUp(300);
+            });
 
             $('.nav-item').click(function (event) {
 
@@ -1457,8 +1457,6 @@
 
                 $('.dropdown').find('.dropdown-menu').first().stop(true, true).slideUp();
             });
-
-
 
             $('.slide>.row').on("click", ".item>.img-thumbnail", function (event) {
                 let carouselInModalPages = $('#carousel-in-modal>.carousel-inner>.big-view');

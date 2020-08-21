@@ -2,6 +2,8 @@ const carouselItem = document.querySelectorAll(".slide>.row");
 const carouselInModalItem = document.querySelectorAll("#carousel-in-modal>.carousel-inner>.big-view");
 const imageThumbnail = document.querySelectorAll(".slide>.row>.item>.img-thumbnail");
 
+//Data sets
+
 const music = [
 
     {
@@ -472,7 +474,6 @@ const moviesCaption = [
 
 ];
 
-
 const booksCaption = [
     {
         "caption": `A lot of people despise classical literature due to it being boring, out of date, or simply
@@ -519,71 +520,71 @@ const booksCaption = [
         of his time. In <i>The Master an Margarita</i>, Bulgakov cleverly criticizes the Soviet society and its values by incorporating religious themes that 
         coexist parallel to modern Soviet setting transformed by the influence of fantasy-like narrative elements. All in all, this novel is fun to read, great to analyze and
         necessary to be familiar with.`
-      },
+    },
 
-      {
+    {
         "caption": `Strugatsky brothers' works are the proof that Soviet science-fiction does indeed have an outstanding value for the world literature.
         But, while some of their novels can be related to conventional sci-fi, books like <i>Monday Begins on Saturday</i> are much more ambiguous in terms of the genre
         differentiation. It shares some features with fantasy, although it's generally believed that there was no such genre in the Soviet Union. 
         Nevertheless, the story set in a book is pretty far from reality. It takes place in a magical scientific institute located in a small town of the Soviet Russia. 
         Scientists of this institute look more like wizards, while their studies are clearly of a supernatural origin. The most peculiar element of the story is an absurdity
         of most studies performed by the scientists. The further you read, the more you come to recognize the satirical nature behind characters' actions.`
-      },
+    },
 
-      {
+    {
         "caption": `As we all know, Stephen King is a king of horror, but he is also a talented narrator who knows a thing or two about human nature.
         My mother is huge fan of the guy, so it was just a matter of time until I would get to his works. <i>Needful Things</i> is my favorite King's book, the main
         reason for that being its charismatic characters, impressive mystical imagery, and a tone of psychological conflicts (both inner and outer ones). 
         Despite being conventionally violent, the novel also gets deep into exposing human hypocrisy, greed, and excessive consumerism, making it a relevant satirical
         work even today.`
-      },
+    },
 
-      {
+    {
         "caption": `Getting to know Lem and his works was sort of a necessity when I decided to watch Andrei Tarkovsky's key works. When it comes to
         book adaptations, I usually prefer to read the original work first. I also once heard that Tarkovsky often used book sources mainly for setting
         recreation, leaving all the character features and original ideas behind for the sake of conveying his own themes and ideas. With that thought in mind, 
         I decided to read Lem's <i>Solaris</i> first. And I never regretted doing that. The novel presents a thoroughly crafted extraterrestrial world that exists
         according to unique and unknowable rules. Humanity representatives who come in contact with this world and its inhabitant are doomed to face their own demons
         and end up questioning their own existence.`
-      },
+    },
 
-      {
+    {
         "caption": `As a logical follow-up of my sci-fi passion, I took a closer look at another famous sci-fi genius - Ray Bradbury. Although he
         worked in various genres, one of his famous books - <i>The Martian Chronicles</i> - is the brightest example of science fiction in the world literature. The book
         is a narratively connected set of short stories that tell us about the alien civilization living on Mars and the human expedition sent to Mars in order to
         explore the planet. In result of the contact, almost all Martians extinct, and those who survive are not welcome to newcomers. Many episodes of the book illustrate
          negative social aspects of human beings, like xenophobia, or inclination to violence. In addition, the author expresses a certain fear with regard to 
          possibilities of a tragic future for the human race through obtaining and utilizing nuclear weapons.`
-      },
+    },
 
-      {
+    {
         "caption": `<i>The Stranger</i> by Albert Camus became kind of a revelation for me as a student. I had never been that much
         depressed and at the same time impressed by a book before. Although it's written in a rather simple and laconic style, the fact
         that the narration happens from the first person allows the reader to be the subject of the events themselves. Experiencing the absurdity
         of the unfolding events is shocking and emotionally hard. It takes time to understand the underlying beliefs of the protagonist and the way he
         perceives his own life and things around him. In the end, you can't just finish the book and go on with your life until you don't spend a day or two ruminating
         on the purpose of your own existence.`
-      },
+    },
 
-      {
+    {
         "caption": `Daniil Kharms is that one guy from the world of art and literature that could be called one of the most prominent meme makers today. 
         Unfortunately, he died quite young, but his absurdic and extremely bold works still live among people who happen to stumble upon a random vignette of his
          here and there. As a solid member of the Soviet avant-garde movement, Kharms often experimented with literary forms in his works, which could be equally related
          to both his prose and poems. In his books, you will find a lot of dark humor, meaninglessness, cruelty, and absurdic violence that is as harsh as it is funny. 
         `
-      },
+    },
 
-      {
+    {
         "caption": `<i>We</i> by Yevgeny Zamyatin was one of the first dystopian novels I read. And, perhaps because it was written much earlier than Huxley's or Orwell's
         works, it felt much more authentic in terms of its ideas and themes. The story is set in the far future, hundreds of years after the great war that 
         destroyed almost all humanity. One State was the initiator of this war that basically conquered the remaining territory and established totalitarianism over the people
         who had survived the war. The key of controlling the population in this dystopia is through forced rationalism and near mathematical logic that applies
         to all spheres of a person's life. As the narration goes on, we learn that there are people outside of the state, and there are renegades among the members of the state who
         want to overthrow it and reunite its sitizens with the outer world.`
-      }
-      
+    }
 
-      
+
+
 
 ];
 
@@ -750,16 +751,17 @@ const musicCaption = [
 ];
 
 
+//Functions
+
+//Before the new content is inserted in the Hobbies section, we need to clear the markup from the current content;
 function clearCarousel() {
     for (let j = 0; j < carouselItem.length; j++) {
         carouselItem[j].innerHTML = "";
-
     }
 
 };
 
-
-
+//The four following functions insert books/music/photos/movies content depending on which hobby category is chosen on the menu;
 function insertBooks() {
 
     clearCarousel();
@@ -841,6 +843,7 @@ function insertMovies() {
     }
 };
 
+//These four functions insert full-size images with captions in the modal carousel when the user clicks on the image thumbnail;
 function insertModalMovies(div) {
     for (let i = 0; i < movies.length; i++) {
         const modalMoviesSection = `
@@ -904,7 +907,3 @@ function insertModalMusic(div) {
 
     }
 }
-
-/*  <!-- if (!item.parent().hasClass('dropdown')) {
-    $('#navbarSupportedContent').removeClass("show");
-} */
