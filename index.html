@@ -98,7 +98,7 @@
         }
 
         svg:hover {
-            filter: drop-shadow( 0 0 5px rgb(252, 71, 198)); 
+            filter: drop-shadow(0 0 5px rgb(252, 71, 198));
         }
 
 
@@ -1300,17 +1300,14 @@
                 const nextButton = $('#carousel-in-card>.carousel-inner>.carousel-control-next');
                 const prevButton = $('#carousel-in-card>.carousel-inner>.carousel-control-prev');
 
-                if (carouselLength) {
-                    nextButton.removeClass('d-none');
-                }
 
                 $('#carousel-in-card').on('slide.bs.carousel', function (carouselItem) {
 
-                    if (carouselItem.to == 0) {
+                    if (carouselItem.to === 0) {
                         $(prevButton).addClass('d-none');
                         $(nextButton).removeClass('d-none');
                     }
-                    else if (carouselItem.to == carouselLength) {
+                    else if (carouselItem.to === carouselLength) {
                         $(prevButton).removeClass('d-none');
                         $(nextButton).addClass('d-none');
 
@@ -1320,6 +1317,7 @@
                         $(nextButton).removeClass('d-none');
                     }
                 })
+
             };
 
             function mobileHandler() {
@@ -1460,6 +1458,9 @@
 
             $('.slide>.row').on("click", ".item>.img-thumbnail", function (event) {
                 let carouselInModalPages = $('#carousel-in-modal>.carousel-inner>.big-view');
+                const carouselLength = $('#carousel-in-modal>.carousel-inner>.big-view').length - 1;
+                const nextButton = $('#carousel-in-modal.carousel-inner.carousel-control-next');
+                const prevButton = $('#carousel-in-modal.carousel-inner.carousel-control-prev');
                 let item = event.target;
                 let photographyCaption = ` 
             <div class="carousel-caption d-md-block">
@@ -1509,12 +1510,36 @@
                 $(".modal").modal('show');
 
 
+
+
+
+
             });
 
             $('.close').click(function () {
                 let carouselInModalPages = $('#carousel-in-modal>.carousel-inner>.big-view');
+
                 $('.modal').modal('hide');
                 carouselInModalPages.empty();
+
+            })
+
+            $('.modal').on('hide.bs.modal', function () {
+                const activeCarouselItem = $('#carousel-in-card>.carousel-inner>.active');
+                const carouselItem = $('#carousel-in-card>.carousel-inner>.carousel-item');
+                const nextButton = $('#carousel-in-card>.carousel-inner>.carousel-control-next');
+                const prevButton = $('#carousel-in-card>.carousel-inner>.carousel-control-prev');
+
+                if (activeCarouselItem.is(carouselItem.eq(0))) {
+                    $(prevButton).addClass('d-none');
+                    $(nextButton).removeClass('d-none');
+                } else if (activeCarouselItem.is(carouselItem.eq(2))) {
+                    $(prevButton).removeClass('d-none');
+                    $(nextButton).addClass('d-none');
+                } else {
+                    $(prevButton).removeClass('d-none');
+                    $(nextButton).removeClass('d-none');
+                }
 
             });
 
@@ -1526,6 +1551,7 @@
                 } else {
                     $('.modal').modal('hide');
                     carouselInModalPages.empty();
+
                 }
 
             })
